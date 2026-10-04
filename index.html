@@ -377,7 +377,6 @@ function use(){
   }
  }
 }
-
 function handleBtn(e){
  var el=e.target;
  while(el&&el!==document){
@@ -451,8 +450,8 @@ function efire(e){
 
 function spawnBoss(){
  bossCount++;
- var scale=Math.pow(1.5,bossCount-1);
- var per=Math.floor([200,300,410][diff]*scale);
+ var scale=Math.pow(1.35,bossCount-1);
+ var per=Math.floor([170,250,340][diff]*scale);
  for(var ei=enemies.length-1;ei>=0;ei--){
   var ee=enemies[ei];
   explode(ee.x,ee.y,cfg[ee.type].co,8,6);
@@ -479,7 +478,7 @@ function updateBoss(dt){
 }
 function bossFire(){
  var cm=1-(boss.num-1)*0.05;
- var stageRate=boss.phase===2?0.75:boss.phase===1?0.88:1;
+ var stageRate=boss.phase===2?0.92:boss.phase===1?1.0:1.1;
  var sp=(3.4+diff*0.4)*(1+(boss.num-1)*0.06);
  var dx=p.x-boss.x,dy=p.y-boss.y,base=Math.atan2(dy,dx);
  var r=Math.random(),i,a,k,ang,off2;
